@@ -1,0 +1,19 @@
+- environment:
+   tomcat:
+    appgroup: tomcat_as
+    appuser:  tomcat_as_group
+    gid: 5000
+    uid: 5000
+   java:
+    home: '/etc/alternatives/java'
+    opts: '-Duser.timezone=GMT
+         -Dfile.encoding=UTF8
+         -Xmx6g
+         -Xms6g'
+   catalina:
+    home: '/opt/tomcat/8.5.9/apache-tomcat-8.5.9/'
+    pid: '/opt/tomcat/8.5.9/apache-tomcat-8.5.9/temp/tomcat.pid'
+    opts: '-Dcom.sun.management.jmxremote
+         -Dcom.sun.management.jxmremote.port8082
+         -Dcom.sun.management.jxmremote.authenticate=false
+         -Dcom.sun.management.jxmremote.ssl=false'

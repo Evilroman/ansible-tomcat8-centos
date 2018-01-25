@@ -1,0 +1,11 @@
+    - name: Install JAVA
+      yum: name=java-1.7.0-openjdk state=latest
+
+    - name: Install GZIP
+      yum: name=gzip state=latest
+
+    - name: Install TAR
+      yum: name=tar state=latest
+
+    - name: Install UNZIP
+      yum: name=unzip state=latest

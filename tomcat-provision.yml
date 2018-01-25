@@ -1,0 +1,13 @@
+- hosts: webservers
+  remote_user: centos
+  become: true
+  become_method: sudo
+  tasks:
+  - include_vars:
+      file: var/tomcat.yml
+      name: tomcat
+  - import_tasks: install_packages.yml
+  - import_tasks: install_tomcat.yml
+  - import_tasks: user.yml
+  - import_tasks: tomcat_configuration.yml
+  - shell: /opt/tomcat/8.5.9/apache-tomcat-8.5.9/bin/setenv.sh

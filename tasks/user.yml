@@ -1,0 +1,4 @@
+- name: Create a grooup for Tomcat
+  group: name=tomcat_as_group gid=5000
+- name: Create a user for Tomcat
+  user: name=tomcat_as uid=5000 group=5000

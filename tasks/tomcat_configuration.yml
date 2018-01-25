@@ -1,0 +1,4 @@
+- name: "Deploy environment variables for Tomcat"
+  template: src=setenv.j2 dest=/opt/tomcat/8.5.9/bin/setenv.sh owner=tomcat_as group=tomcat_as_group
+- name: "Deploy Tomcat startup script"
+  templat: src=tomcat.j2 dest=/etc/init.d/tomcat owner=centos mode=700

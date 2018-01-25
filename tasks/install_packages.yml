@@ -1,0 +1,17 @@
+- name: "Install prerequsites for Tomcat"
+  apt: name={{ item }} state=latest
+  with_items
+   - default-jre
+   - unzip
+   - tar
+   - gzip
+
+- name: "Install Tomcat"
+  get_url: url=http://archive.apache.org/dist/tomcat/tomcat-8/v8.5.9/bin/apache-tomcat-8.5.9-deployer.tar.gz dest=/tmp mode 0440
+  vars:
+  version: 8.5.9
+
+- name: "Unpack Tomcat"
+  unarchive: src=/tmp/apache-tomcat-8.5.9-deployer.tar.gz dest=/opt/tomcat/8.5.9/ copy=no
+  when: tc.isdir is undefined
+

@@ -1,0 +1,6 @@
+- name: Manage Tomcat
+   remote_user: centos
+   become: true
+   become_method: sudo
+   roles:
+     - {role: tomcat, tags: ['tomcat'] }

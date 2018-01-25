@@ -1,0 +1,10 @@
+- template:
+   src: setenv.j2
+   dest: /opt/tomcat/8.5.9/apache-tomcat-8.5.9/bin/setenv.sh
+   owner: tomcat_as
+   group: tomcat_as_group
+- template:
+   src: tomcat.j2
+   dest: /etc/init.d/tomcat
+   owner: tomcat_as
+   mode: 700
